@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: weather_data
+    database: weather_data
+    tables:
+      - name: weather_raw
+      - name: dim_city
+      - name: dim_weather
+      - name: dim_weather_icon
