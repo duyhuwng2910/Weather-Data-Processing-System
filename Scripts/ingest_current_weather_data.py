@@ -126,7 +126,7 @@ def normalize_weather(json_data: dict) -> dict:
         "clouds_all": clouds.get("all"),
         "city_id": json_data.get("id"),
         "event_ts": datetime.fromtimestamp(json_data.get("dt")),
-        "ingest_ts": datetime.now().strftime("%d-%m-%Y %H:00:00")
+        "ingest_ts": datetime.now().strftime("%Y-%m-%d %H:00:00")
     }
 
 

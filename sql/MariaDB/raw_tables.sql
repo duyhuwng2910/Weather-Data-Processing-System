@@ -22,7 +22,6 @@ create table if not exists weather_raw (
     wind_deg INT,
     wind_gust FLOAT,
     clouds_all INT,
-    dt VARCHAR(20),
     city_id BIGINT,
     event_ts TIMESTAMP,
     ingest_ts TIMESTAMP
