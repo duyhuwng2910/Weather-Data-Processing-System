@@ -14,7 +14,7 @@ create table if not exists dim_weather_icon (
 -- Source: https://openweathermap.org/weather-conditions
 -- ============================================================
 
-INSERT INTO dim_weather_icon (id, type, description) VALUES
+insert into dim_weather_icon (id, type, description) values
 -- Clear sky
 ('01d', 'day',   'clear sky'),
 ('01n', 'night', 'clear sky'),

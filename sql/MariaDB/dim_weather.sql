@@ -6,7 +6,7 @@ create table if not exists dim_weather (
     id INT PRIMARY KEY,
     group_code VARCHAR(50),
     description VARCHAR(255),
-    icon_id VARCHAR(10)
+    icon_id VARCHAR(10) references dim_weather_icon(id)
 )
 ;
 
@@ -16,7 +16,7 @@ create table if not exists dim_weather (
 -- Source: https://openweathermap.org/weather-conditions
 -- ============================================================
 
-INSERT INTO dim_weather (id, group_code, description, icon_id) VALUES
+insert into dim_weather (id, group_code, description, icon_id) values
 -- Group 2xx: Thunderstorm
 (200, 'Thunderstorm', 'thunderstorm with light rain', '11d'),
 (201, 'Thunderstorm', 'thunderstorm with rain', '11d'),
