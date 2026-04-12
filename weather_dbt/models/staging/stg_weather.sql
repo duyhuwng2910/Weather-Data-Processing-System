@@ -1,8 +1,8 @@
-with source as (
+with
+source as (
     select *
     from {{ source('weather_data', 'weather_raw') }}
-    where ingest_ts = '{{ present_hour() }}'
-
+    where ingest_ts = date_format(current_timestamp(), '%Y-%m-%d %H:00:00')
 ),
 cleaned as (
     select
