@@ -1,6 +1,6 @@
 import requests
 import pandas as pd
-from datetime import datetime
+from datetime import datetime, timezone
 import configparser
 from pathlib import Path
 from sqlalchemy import create_engine
@@ -125,8 +125,8 @@ def normalize_weather(json_data: dict) -> dict:
         "wind_gust": wind.get("gust"),
         "clouds_all": clouds.get("all"),
         "city_id": json_data.get("id"),
-        "event_ts": datetime.fromtimestamp(json_data.get("dt")),
-        "ingest_ts": datetime.now().strftime("%Y-%m-%d %H:00:00")
+        "event_ts": datetime.fromtimestamp(json_data.get("dt"), tz=timezone.utc).strftime("%Y-%m-%d %H:%M:%S"),
+        "ingest_ts": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:00:00")
     }
 
 
