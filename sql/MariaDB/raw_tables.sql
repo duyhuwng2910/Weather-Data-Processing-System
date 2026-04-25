@@ -27,3 +27,7 @@ create table if not exists weather_raw (
     ingest_ts TIMESTAMP
 )
 ;
+
+alter table weather_raw
+add column if not exists weather_id INT after lon
+;
