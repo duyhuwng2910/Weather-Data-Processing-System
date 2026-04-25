@@ -110,6 +110,7 @@ def normalize_weather(json_data: dict) -> dict:
     return {
         "lat": json_data["coord"]["lat"],
         "lon": json_data["coord"]["lon"],
+        "weather_id": weather.get("id"),
         "weather_main": weather.get("main"),
         "weather_description": weather.get("description"),
         "weather_icon": weather.get("icon"),
